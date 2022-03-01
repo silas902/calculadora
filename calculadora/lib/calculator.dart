@@ -9,7 +9,10 @@ import 'components/keyboard.dart';
 
 
 class Calculator extends StatefulWidget {
+  //const Calculator({Key? key, required this.title}) : super(key: key);
   
+  
+
   @override
   State<Calculator> createState() => _CalculatorState();
 }
@@ -28,6 +31,7 @@ class _CalculatorState extends State<Calculator> {
       DeviceOrientation.portraitUp
     ]);
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Column(
         children: [
           Display(memory.value),

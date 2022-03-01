@@ -1,34 +1,37 @@
 import 'package:flutter/material.dart';
+import '../calculator.dart';
+
 
 class Button extends StatelessWidget {
-  static const DARK = Color.fromRGBO(82, 82, 82, 1);
-  static const DEFAULT = Color.fromRGBO(112, 112, 112, 1);
-  static const OPERATION = Color.fromRGBO(250, 158, 13, 1);
- 
+
+   MaterialColor? dd = Colors.deepOrange;
+  
+
   final String text;
   final bool big;
-  final Color color;
   final void Function(String) cb;
 
   Button({
     required this.text,
     this.big = false,
-    this.color = DEFAULT,
     required this.cb,
+     this.dd, 
+    
   });
 
   Button.big({
     required this.text,
     this.big = true,
-    this.color = DEFAULT,
-    required this.cb,
+     required this.cb, 
+     this.dd,
+     
   });
 
   Button.operation({
     required this.text,
     this.big = false,
-    this.color = OPERATION,
     required this.cb,
+    this.dd,
   });
 
   @override
@@ -37,12 +40,12 @@ class Button extends StatelessWidget {
       flex: big ? 2 : 1,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: this.color,
+          primary: Colors.black,
         ),
         child: Text(
           text,
           style: TextStyle(
-            color: Colors.white,
+            color: dd,
             fontSize: 32,
             fontWeight: FontWeight.w200,
             
